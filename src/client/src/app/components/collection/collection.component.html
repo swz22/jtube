@@ -1,0 +1,14 @@
+<h1>Click any video to play with J-Media Player</h1>
+
+<div class="container">
+  <span *ngFor="let file of files">
+    <video id="videoPlayer" (click)="stream(file.filename)" width="400" height="300" controls
+      *ngIf="file.contentType.includes('video')">
+      <source [src]="'/image/' + file.filename" type="video/mp4" />
+    </video>
+    <img *ngIf="file.contentType.includes('image')" alt="" width="400" height="240" [src]="'/image/' + file.filename"
+       />
+  </span>
+</div>
+
+<button id="coolbutton" [routerLink]="['/upload']">Upload More Videos</button>

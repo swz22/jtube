@@ -1,0 +1,14 @@
+<mat-toolbar class="mat-elevation-z8" color="primary">
+  <span id="title">Welcome to J-Tube!</span>
+
+  <div class="spacer"></div>
+
+  <div *ngIf="isHome()">
+    <input type="text" placeholder="Search.." [(ngModel)]="searchTerm" (keyup)="onSearch()" />
+  </div>
+
+  <a mat-button routerLink="home"> Home </a>
+  <a mat-button routerLink="upload"> Upload</a>
+  <a mat-button routerLink="collection"> Collection </a>
+  <a mat-raised-button color="accent" routerLink="signup"> Sign Up</a>
+</mat-toolbar>

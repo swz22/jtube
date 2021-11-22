@@ -1,0 +1,44 @@
+<div class="container">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+  <h1 style="margin-top: 120px">Upload Videos and Images</h1>
+
+      <div class="col-sm-6">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" name="file" id="file1" (change)="onFileSelect($event)">
+          <label class="custom-file-label" for="file1" id="file-label">Choose file</label>
+        </div>
+        <p style="margin-top: 2em;font-size: large; color:red"> Upload files < 50mb only. </p>
+        <p style="font-size: large; color:red"> Max database storage is 512MB!</p>
+      </div>
+
+      <div style="margin-left: 3em;">
+      <p style="margin-top:3em;margin-bottom:1em;font-size:1.5em;"> Uploaded Files:</p>
+      <ul>
+        <li *ngFor="let file of files">
+          <span style="display: flex;">
+          <a class="filetext" [href]="'/image/' + file.filename"
+            [download]="file.filename">{{ file.filename }} </a>
+          <!-- <button (click)="stream(file.filename)" *ngIf="file.contentType.includes('video')"> Stream </button> -->
+          <button class="btn-close" (click)="delete(file._id); refreshPage();">
+            <span class="icon-cross"></span>
+            <span class="visually-hidden"></span>
+          </button>
+        </span>
+          <br />
+        </li>
+      </ul>
+
+      <p style="font-size:1.2em"><mat-icon (click)="refreshPage()" style="cursor: pointer;">refresh</mat-icon> Refresh List </p>
+    </div>
+
+    <div class="col-sm-6" id="buttoncontainer">
+      <button class="btn btn-primary" [routerLink]="['/collection']">
+        View Collection
+      </button>
+      <button class="btn btn-primary" (click)="onFormSubmit();" style="margin-top: 12px">
+        Upload
+      </button>
+    </div>
+    </div>
+

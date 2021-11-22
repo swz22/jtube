@@ -1,0 +1,25 @@
+<div class="home">
+  <mat-card class="card" *ngFor="let video of dataService.filteredVideos">
+    <a [href]="video.url">
+      <img mat-card-image [src]="video.pictureurl"/>
+    </a>
+
+    <mat-card-header>
+      <div mat-card-avatar>
+        <a [href]="video.authorurl">
+          <img id="img" width="38" style="border-radius: 50%"[src]="video.avatarurl"/>
+        </a>
+      </div>
+      <mat-card-title>
+        <a style="font-size: 15px; text-decoration: none" [href]="video.url">{{video.name}}</a>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-subtitle>
+      <mat-card-title>
+        <a style="font-size: 14px; text-decoration: none" [href]="video.authorurl">{{video.author}}</a>
+        <span style="font-size: 13px"> {{ video.views }}</span>
+      </mat-card-title>
+    </mat-card-subtitle>
+  </mat-card>
+</div>
