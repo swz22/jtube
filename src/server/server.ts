@@ -102,7 +102,7 @@ app.post("/files/del/:id", (req, res) => {
 
 
 app.listen(PORT, function () {
-  console.log(`server started at ${PORT}`);
+  console.log(`server started at http://localhost:${PORT}`);
 });
 
 app.all("*", function (req, res) {

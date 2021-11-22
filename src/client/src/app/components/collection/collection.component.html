@@ -2,7 +2,7 @@
 
 <div class="container">
   <span *ngFor="let file of files">
-    <video id="videoPlayer" (click)="stream(file.filename)" width="400" height="300" controls
+    <video id="videoPlayer" (click)="stream(file.filename)" width="400" height="300" controls muted
       *ngIf="file.contentType.includes('video')">
       <source [src]="'/image/' + file.filename" type="video/mp4" />
     </video>

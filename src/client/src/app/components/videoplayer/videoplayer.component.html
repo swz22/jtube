@@ -1,7 +1,7 @@
 
 <div class="container">
   <p id = title> J-Media Player © </p>
-  <video *ngIf="filename" id="videoPlayer" width="85%" controls autoplay>
+  <video *ngIf="filename" id="videoPlayer" width="80%" controls autoplay>
     <source [src]="'/image/' + filename" type="video/mp4"/>
   </video>
   <button [routerLink]="['/collection']">Back to Collection</button>
