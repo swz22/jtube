@@ -13,8 +13,9 @@
 
   <div style="margin-left: 3em;">
     <p style="margin-top:3em;margin-bottom:1em;font-size:1.5em;"> Uploaded Files:</p>
-    <ul>
-      <mat-card *ngFor="let file of files">
+
+    <div class="cardContainer">
+      <mat-card class="card" *ngFor="let file of files">
         <span style="display: flex;">
           <video class="thumbnail" (click)="stream(file.filename)" width="90" height="90" muted
             *ngIf="file.contentType.includes('video')">
@@ -31,8 +32,9 @@
           </button>
         </span>
       </mat-card>
+    </div>
+
       <br />
-    </ul>
 
     <p style="font-size:1.2em">
       <mat-icon (click)="refreshPage()" style="cursor: pointer;">refresh</mat-icon> Refresh List
