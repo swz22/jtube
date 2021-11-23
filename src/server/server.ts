@@ -70,6 +70,9 @@ const upload = multer({
 
 app.post("/upload", upload.single("file"), (req, res) => {
   // res.json({file : req.file})
+return res.send({
+      message: "File has been uploaded.",
+    });
   res.redirect("/");
 });
 
