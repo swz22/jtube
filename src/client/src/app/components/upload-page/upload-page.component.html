@@ -14,7 +14,7 @@
   <div style="margin-left: 3em;">
     <p style="margin-top:3em;margin-bottom:1em;font-size:1.5em;"> Uploaded Files:</p>
     <ul>
-      <li *ngFor="let file of files">
+      <mat-card *ngFor="let file of files">
         <span style="display: flex;">
           <video class="thumbnail" (click)="stream(file.filename)" width="90" height="90" muted
             *ngIf="file.contentType.includes('video')">
@@ -30,8 +30,8 @@
             <span class="visually-hidden"></span>
           </button>
         </span>
-        <br />
-      </li>
+      </mat-card>
+      <br />
     </ul>
 
     <p style="font-size:1.2em">
