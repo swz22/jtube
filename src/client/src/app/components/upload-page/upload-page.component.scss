@@ -86,6 +86,7 @@
 .filetext {
   font-size: 1.3em;
   margin-top: 1.8em;
+  margin-left: 1em;
 }
 
 .note {
@@ -96,6 +97,14 @@
 
 .thumbnail {
   margin-right: 1em;
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.logo {
+  margin-top: 1.8px;
+  margin-left: 0.5em;
 }
 
 #buttoncontainer {
