@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   templateUrl: './upload-page.component.html',
   styleUrls: ['./upload-page.component.scss'],
 })
-
 export class UploadPageComponent implements OnInit {
   title = 'upload-page';
 
@@ -17,10 +16,7 @@ export class UploadPageComponent implements OnInit {
   fileInputLabel: string;
   file: File | null = null;
   files: any = [];
-  constructor(
-    private http: HttpClient,
-    private router: Router,
-  ) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.getFiles();
@@ -36,7 +32,7 @@ export class UploadPageComponent implements OnInit {
 
   onFormSubmit() {
     if (!this.file) {
-      return alert('Select a file!')
+      return alert('Select a file!');
     }
     const formData = new FormData();
     formData.append('file', this.file);
@@ -45,15 +41,17 @@ export class UploadPageComponent implements OnInit {
   }
 
   getFiles() {
-    this.http.get<any>('/files').subscribe(files => this.files = files);
+    this.http.get<any>('/files').subscribe((files) => (this.files = files));
   }
 
-  stream(filename: string){
+  stream(filename: string) {
     this.router.navigate(['stream', filename]);
   }
 
-  delete(id: string){
-    this.http.post<any>('/files/del/' + id, null).subscribe(files => this.files = files);
+  delete(id: string) {
+    this.http
+      .post<any>('/files/del/' + id, null)
+      .subscribe((files) => (this.files = files));
   }
 
   refreshPage() {

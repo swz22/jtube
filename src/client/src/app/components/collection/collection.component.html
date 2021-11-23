@@ -6,8 +6,7 @@
       *ngIf="file.contentType.includes('video')">
       <source [src]="'/image/' + file.filename" type="video/mp4" />
     </video>
-    <img *ngIf="file.contentType.includes('image')" alt="" width="400" height="240" [src]="'/image/' + file.filename"
-       />
+    <img *ngIf="file.contentType.includes('image')" alt="" width="400" height="240" [src]="'/image/' + file.filename" />
   </span>
 </div>
 

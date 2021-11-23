@@ -1,13 +1,13 @@
 <div class="home">
   <mat-card class="card" *ngFor="let video of dataService.filteredVideos">
     <a [href]="video.url">
-      <img mat-card-image [src]="video.pictureurl"/>
+      <img mat-card-image [src]="video.pictureurl" />
     </a>
 
     <mat-card-header>
       <div mat-card-avatar>
         <a [href]="video.authorurl">
-          <img id="img" width="38" style="border-radius: 50%"[src]="video.avatarurl"/>
+          <img id="img" width="38" style="border-radius: 50%" [src]="video.avatarurl" />
         </a>
       </div>
       <mat-card-title>

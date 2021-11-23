@@ -19,7 +19,7 @@ export class NavBarComponent implements OnInit {
   }
 
   isHome(): boolean {
-    const check = this.router.url.indexOf('/home')
+    const check = this.router.url.indexOf('/home');
     if (check) {
       return false;
     }

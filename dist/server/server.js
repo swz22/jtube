@@ -7,9 +7,9 @@ import multer from "multer";
 import { GridFsStorage } from "multer-gridfs-storage";
 import "mongodb";
 import dotenv from "dotenv";
-import { auth } from 'express-openid-connect';
+import { auth } from "express-openid-connect";
 const __dirname = path.resolve();
-const clientPath = path.join(__dirname, 'dist/client');
+const clientPath = path.join(__dirname, "dist/client");
 const app = express();
 const PORT = process.env.PORT || 3000;
 let gfs;
@@ -59,18 +59,15 @@ const upload = multer({
 });
 app.post("/upload", upload.single("file"), (req, res) => {
     // res.json({file : req.file})
-    return res.send({
-        message: "File has been uploaded.",
-    });
     res.redirect("/");
 });
 app.get("/files", (req, res) => {
-    console.log('get files');
+    console.log("get files");
     gfs.find().toArray((err, files) => {
         // check if files
         if (!files || files.length === 0) {
             return res.status(404).json({
-                err: "no files exist"
+                err: "no files exist",
             });
         }
         return res.json(files);
@@ -78,17 +75,17 @@ app.get("/files", (req, res) => {
 });
 app.get("/image/:filename", (req, res) => {
     // console.log('id', req.params.id)
-    console.log('get image');
+    console.log("get image");
     console.log(req.params.filename);
     gfs
         .find({
-        filename: req.params.filename
+        filename: req.params.filename,
     })
         .toArray((err, files) => {
         console.log(files);
         if (!files || files.length === 0) {
             return res.status(404).json({
-                err: "no files exist"
+                err: "no files exist",
             });
         }
         gfs.openDownloadStreamByName(req.params.filename).pipe(res);

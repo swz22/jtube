@@ -5,7 +5,6 @@ import { Video } from '../models/video.model';
   providedIn: 'root',
 })
 export class DataService {
-
   filteredVideos;
 
   filteredItems(search?): any {
@@ -19,7 +18,7 @@ export class DataService {
   }
 
   shuffle(list) {
-    let newList = list.slice(1)
+    let newList = list.slice(1);
     let shuffleList = newList.reduce((p, n) => {
       const size = p.length;
       const index = Math.trunc(Math.random() * (size - 1));
@@ -27,7 +26,7 @@ export class DataService {
       return p;
     }, []);
 
-    return [list[0]].concat(shuffleList)
+    return [list[0]].concat(shuffleList);
   }
 
   videoList: Array<Video> = [
@@ -37,9 +36,11 @@ export class DataService {
       name: 'What Is Bitwise? | Bitwise Industries',
       author: 'Bitwise Industries',
       url: 'https://www.youtube.com/watch?v=yONlf6fSSI4',
-      avatarurl: 'https://yt3.ggpht.com/wvoJyH9G5za5yHtD3f9_LnToPWlyz6cL4zOR1IivyF-TpfZH-P7t-ffp2sWu1pZMBLvnLOIL=s68-c-k-c0x00ffffff-no-rj',
+      avatarurl:
+        'https://yt3.ggpht.com/wvoJyH9G5za5yHtD3f9_LnToPWlyz6cL4zOR1IivyF-TpfZH-P7t-ffp2sWu1pZMBLvnLOIL=s68-c-k-c0x00ffffff-no-rj',
       authorurl: 'https://www.youtube.com/channel/UCDT-S9qUcFofPtpC8W5zcJA',
-      pictureurl: 'https://i.ytimg.com/vi/yONlf6fSSI4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBoVGLKk6OBGxPCXmqtzqi7L2wfwg',
+      pictureurl:
+        'https://i.ytimg.com/vi/yONlf6fSSI4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBoVGLKk6OBGxPCXmqtzqi7L2wfwg',
       views: '8K views',
     },
     {
@@ -682,7 +683,7 @@ export class DataService {
       views: '74K views',
     },
     {
-    id: '51',
+      id: '51',
       type: 'Food',
       name: 'The Rotisserie King of San Francisco',
       author: 'Munchies',
@@ -810,10 +811,10 @@ export class DataService {
       pictureurl:
         'https://i.ytimg.com/vi/TJFVV2L8GKs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCmMVbd8fhZvB6dQM0X7xbHJ5oK2g',
       views: '7.2M views',
-    }
+    },
   ];
 
   constructor() {
-    this.filteredItems()
+    this.filteredItems();
   }
 }

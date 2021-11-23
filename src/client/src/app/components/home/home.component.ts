@@ -7,9 +7,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   constructor(public dataService: DataService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

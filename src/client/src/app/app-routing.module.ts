@@ -6,12 +6,12 @@ import { UploadPageComponent } from './components/upload-page/upload-page.compon
 import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'collection', component: CollectionComponent },
   { path: 'upload', component: UploadPageComponent },
-  { path: 'stream/:filename', component: VideoplayerComponent},
+  { path: 'stream/:filename', component: VideoplayerComponent },
 ];
 
 @NgModule({
