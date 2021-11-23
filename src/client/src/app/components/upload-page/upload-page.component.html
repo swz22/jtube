@@ -16,13 +16,14 @@
     <ul>
       <li *ngFor="let file of files">
         <span style="display: flex;">
-          <a class="filetext" [href]="'/image/' + file.filename" [download]="file.filename">{{ file.filename }} </a>
-          <video id="videoPlayer" (click)="stream(file.filename)" width="80" height="80" muted
+          <video class="thumbnail" (click)="stream(file.filename)" width="90" height="90" muted
             *ngIf="file.contentType.includes('video')">
             <source [src]="'/image/' + file.filename" type="video/mp4" />
           </video>
-          <img *ngIf="file.contentType.includes('image')" alt="" width="80" height="80"
+          <img class="thumbnail" *ngIf="file.contentType.includes('image')" alt="" width="90" height="90"
             [src]="'/image/' + file.filename" />
+
+          <a class="filetext" [href]="'/image/' + file.filename" [download]="file.filename">{{ file.filename }} </a>
           <!-- <button (click)="stream(file.filename)" *ngIf="file.contentType.includes('video')"> Stream </button> -->
           <button class="btn-close" (click)="delete(file._id); refreshPage();">
             <span class="icon-cross"></span>
