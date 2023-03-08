@@ -7,7 +7,7 @@ import multer from "multer";
 import { GridFsStorage } from "multer-gridfs-storage";
 import "mongodb";
 import dotenv from "dotenv";
-import { auth } from "express-openid-connect";
+// import { auth } from "express-openid-connect";
 const __dirname = path.resolve();
 const clientPath = path.join(__dirname, "dist/client");
 const app = express();
@@ -15,14 +15,14 @@ const PORT = process.env.PORT || 3000;
 let gfs;
 dotenv.config();
 app.use(cors());
-app.use(auth({
-    authRequired: true,
-    auth0Logout: true,
-    issuerBaseURL: process.env.ISSUER_BASE_URL,
-    baseURL: process.env.BASE_URL,
-    clientID: process.env.CLIENT_ID,
-    secret: process.env.SECRET,
-}));
+// app.use(auth({
+//     authRequired: true,
+//     auth0Logout: true,
+//     issuerBaseURL: process.env.ISSUER_BASE_URL,
+//     baseURL: process.env.BASE_URL,
+//     clientID: process.env.CLIENT_ID,
+//     secret: process.env.SECRET,
+// }));
 app.use(express.static(clientPath));
 mongoose
     .connect(`${process.env.mongoURI}`)
